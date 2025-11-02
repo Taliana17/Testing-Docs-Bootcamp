@@ -94,19 +94,19 @@ Documentación del código (Compodoc)
 Para aportar al proyecto:
 
 - **Crear una rama para tu trabajo:**
-git checkout -b feature/nueva-entidad
+git checkout -b 
 
 - Realizar tus cambios y commits.
 
 - **Hacer push de la rama:**
-git push origin feature/nueva-entidad
+git push origin 
 
 Crear un Pull Request hacia develop o main.
 
 ##  Roles
 
-Monica Ismelia Caña Reyes – Documentación técnica
+Monica Ismelia Caña Reyes – Documentación CompoDoc
 
-Carolina Isabel Tovio Albernia – Documentación
+Carolina Isabel Tovio Albernia – Documentación de rutas y readme
 
 Taliana Moreno Guzmán – Testing 
