@@ -122,14 +122,14 @@ Nombre: id	Tipo: number	Descripción: Identificador de la categoría
 
 **1. Crear una nueva factura**
 
-Método: POST
-Endpoint: /facturacion
-Descripción: Crea una nueva factura en el sistema.
+- Método: POST
+- Endpoint: /facturacion
+- Descripción: Crea una nueva factura en el sistema.
 
-Headers:
-Content-Type: application/json
+# Headers:
+- Content-Type: application/json
 
-Body (JSON):
+- Body (JSON):
 {
   "numero_factura": "FAC-001",
   "tipo_factura": "efectivo",
@@ -138,8 +138,7 @@ Body (JSON):
   "id_venta": 1
 }
 
-
-Respuesta exitosa (201 - Created):
+- Respuesta exitosa (201 - Created):
 {
   "id": 1,
   "numero_factura": "FAC-001",
@@ -152,11 +151,11 @@ Respuesta exitosa (201 - Created):
 
 **2. Listar todas las facturas**
 
-Método: GET
-Endpoint: /facturacion
-Descripción: Devuelve la lista completa de facturas registradas.
+- Método: GET
+- Endpoint: /facturacion
+- Descripción: Devuelve la lista completa de facturas registradas.
 
-Respuesta (200 - OK):
+- Respuesta (200 - OK):
 [
   {
     "id": 1,
@@ -178,14 +177,14 @@ Respuesta (200 - OK):
 
 **3. Buscar una factura por ID**
 
-Método: GET
-Endpoint: /facturacion/:id
-Descripción: Obtiene los detalles de una factura específica por su identificador numérico.
+- Método: GET
+- Endpoint: /facturacion/:id
+- Descripción: Obtiene los detalles de una factura específica por su identificador numérico.
 
-Parámetros:
+- Parámetros:
 Nombre: id	Tipo: number	Descripción: Identificador de la factura
 
-Respuesta (200 - OK):
+- Respuesta (200 - OK):
 {
   "id": 1,
   "numero_factura": "FAC-001",
@@ -195,26 +194,26 @@ Respuesta (200 - OK):
   "id_venta": 1
 }
 
-Respuesta (404 - Not Found):
+- Respuesta (404 - Not Found):
 {
   "message": "Factura no encontrada"
 }
 
 **4. Actualizar una factura**
 
-Método: PATCH
-Endpoint: /facturacion/:id
-Descripción: Actualiza los datos de una factura existente.
+- Método: PATCH
+- Endpoint: /facturacion/:id
+- Descripción: Actualiza los datos de una factura existente.
 
-Headers:
-Content-Type: application/json
+# Headers:
+- Content-Type: application/json
 
-Body (JSON):
+- Body (JSON):
 {
   "metodo_pago": "efectivo"
 }
 
-Respuesta (200 - OK):
+- Respuesta (200 - OK):
 {
   "id": 1,
   "numero_factura": "FAC-001",
@@ -227,22 +226,22 @@ Respuesta (200 - OK):
 
 **5. Eliminar una factura**
 
-Método: DELETE
-Endpoint: /facturacion/:id
-Descripción: Elimina una factura del sistema según su ID.
+- Método: DELETE
+- Endpoint: /facturacion/:id
+- Descripción: Elimina una factura del sistema según su ID.
 
-Respuesta (200 - OK):
+- Respuesta (200 - OK):
 {
   "message": "Factura eliminada correctamente"
 }
 
-Respuesta (404 - Not Found):
+- Respuesta (404 - Not Found):
 {
   "message": "Factura no encontrada"
 }
 
 **Tipos de datos (DTOs)**
-CreateFacturacionDto
+- CreateFacturacionDto
 {
   numero_factura: string;
   tipo_factura: string;
@@ -251,7 +250,7 @@ CreateFacturacionDto
   id_venta: number;
 }
 
-UpdateFacturacionDto
+- UpdateFacturacionDto
 {
   numero_factura?: string;
   tipo_factura?: string;
@@ -260,19 +259,20 @@ UpdateFacturacionDto
   id_venta?: number;
 }
 
+---
 
 ### Módulo de Productos ###
 
 **1. Crear nuevo producto**
 
-Método: POST
-Endpoint: /productos
-Descripción: Crea un nuevo producto en el sistema.
+- Método: POST
+- Endpoint: /productos
+- Descripción: Crea un nuevo producto en el sistema.
 
-Headers:
-Content-Type: application/json
+# Headers:
+- Content-Type: application/json
 
-Body (JSON):
+- Body (JSON):
 {
   "nombre": "Tornillos",
   "descripcion": "De 5 milímetros",
@@ -282,8 +282,7 @@ Body (JSON):
   "categoriaId": 1
 }
 
-
-Respuesta exitosa (201 - Created):
+- Respuesta exitosa (201 - Created):
 {
   "id": 1,
   "nombre": "Tornillos",
@@ -297,11 +296,11 @@ Respuesta exitosa (201 - Created):
 
 **2. Listar todos los productos**
 
-Método: GET
-Endpoint: /productos
-Descripción: Devuelve la lista completa de productos registrados.
+- Método: GET
+- Endpoint: /productos
+- Descripción: Devuelve la lista completa de productos registrados.
 
-Respuesta (200 - OK):
+- Respuesta (200 - OK):
 [
   {
     "id": 1,
@@ -325,14 +324,14 @@ Respuesta (200 - OK):
 
 **3. Buscar producto por ID**
 
-Método: GET
-Endpoint: /productos/:id
-Descripción: Busca un producto específico por su identificador numérico.
+- Método: GET
+- Endpoint: /productos/:id
+- Descripción: Busca un producto específico por su identificador numérico.
 
-Parámetros:
+- Parámetros:
 Nombre: id	Tipo: number	Descripción: Identificador del producto
 
-Respuesta (200 - OK):
+- Respuesta (200 - OK):
 {
   "id": 1,
   "nombre": "Tornillos",
@@ -343,21 +342,21 @@ Respuesta (200 - OK):
   "categoriaId": 1
 }
 
-Respuesta (404 - Not Found):
+- Respuesta (404 - Not Found):
 {
   "message": "Producto no encontrado"
 }
 
 **4. Actualizar un producto**
 
-Método: PUT
-Endpoint: /productos/:id
-Descripción: Modifica los datos de un producto existente.
+- Método: PUT
+- Endpoint: /productos/:id
+- Descripción: Modifica los datos de un producto existente.
 
-Headers:
-Content-Type: application/json
+# Headers:
+- Content-Type: application/json
 
-Body (JSON):
+- Body (JSON):
 {
   "nombre": "Tubo de PVC",
   "descripcion": "Plástico",
@@ -367,8 +366,7 @@ Body (JSON):
   "categoriaId": 1
 }
 
-
-Respuesta (200 - OK):
+- Respuesta (200 - OK):
 {
   "id": 1,
   "nombre": "Tubo de PVC",
@@ -380,30 +378,30 @@ Respuesta (200 - OK):
   "updatedAt": "2025-11-02T16:40:00Z"
 }
 
-Respuesta (404 - Not Found):
+- Respuesta (404 - Not Found):
 {
   "message": "Producto no encontrado"
 }
 
 **5. Eliminar un producto**
 
-Método: DELETE
-Endpoint: /productos/:id
-Descripción: Elimina un producto existente según su ID.
+- Método: DELETE
+- Endpoint: /productos/:id
+- Descripción: Elimina un producto existente según su ID.
 
-Respuesta (200 - OK):
+- Respuesta (200 - OK):
 {
   "message": "Producto eliminado correctamente"
 }
 
-Respuesta (404 - Not Found):
+- Respuesta (404 - Not Found):
 {
   "message": "Producto no encontrado"
 }
 
 **Tipos de datos (DTOs)**
 
-CreateProductoDto
+- CreateProductoDto
 {
   nombre: string;
   descripcion: string;
@@ -413,7 +411,7 @@ CreateProductoDto
   categoriaId: number;
 }
 
-UpdateProductoDto
+- UpdateProductoDto
 {
   nombre?: string;
   descripcion?: string;
@@ -423,27 +421,27 @@ UpdateProductoDto
   categoriaId?: number;
 }
 
+---
 
 ### Módulo de Proveedores ###
 
 **1. Crear nuevo proveedor**
 
-Método: POST
-Endpoint: /proveedores
-Descripción: Crea un nuevo proveedor en el sistema.
+- Método: POST
+- Endpoint: /proveedores
+- Descripción: Crea un nuevo proveedor en el sistema.
 
-Headers:
-Content-Type: application/json
+# Headers:
+- Content-Type: application/json
 
-Body (JSON):
+- Body (JSON):
 {
   "nombre": "NestJS Distribuciones",
   "telefono": "3201234567",
   "correo": "contacto@nestjs.com"
 }
 
-
-Respuesta exitosa (201 - Created):
+- Respuesta exitosa (201 - Created):
 {
   "id": 1,
   "nombre": "NestJS Distribuciones",
@@ -452,14 +450,13 @@ Respuesta exitosa (201 - Created):
   "createdAt": "2025-11-02T16:30:00Z"
 }
 
-
 **2. Listar todos los proveedores**
 
-Método: GET
-Endpoint: /proveedores
-Descripción: Devuelve la lista completa de proveedores registrados en el sistema.
+- Método: GET
+- Endpoint: /proveedores
+- Descripción: Devuelve la lista completa de proveedores registrados en el sistema.
 
-Respuesta (200 - OK):
+- Respuesta (200 - OK):
 [
   {
     "id": 1,
@@ -477,14 +474,14 @@ Respuesta (200 - OK):
 
 **3. Buscar proveedor por ID**
 
-Método: GET
-Endpoint: /proveedores/:id
-Descripción: Busca un proveedor específico por su identificador numérico.
+- Método: GET
+- Endpoint: /proveedores/:id
+- Descripción: Busca un proveedor específico por su identificador numérico.
 
-Parámetros:
+- Parámetros:
 Nombre: id	Tipo: number	Descripción: Identificador del proveedor
 
-Respuesta (200 - OK):
+- Respuesta (200 - OK):
 {
   "id": 1,
   "nombre": "NestJS Distribuciones",
@@ -492,29 +489,28 @@ Respuesta (200 - OK):
   "correo": "contacto@nestjs.com"
 }
 
-
-Respuesta (404 - Not Found):
+- Respuesta (404 - Not Found):
 {
   "message": "Proveedor no encontrado"
 }
 
 **4. Actualizar un proveedor**
 
-Método: PUT
-Endpoint: /proveedores/:id
-Descripción: Modifica los datos de un proveedor existente.
+- Método: PUT
+- Endpoint: /proveedores/:id
+- Descripción: Modifica los datos de un proveedor existente.
 
-Headers:
-Content-Type: application/json
+# Headers:
+- Content-Type: application/json
 
-Body (JSON):
+- Body (JSON):
 {
   "nombre": "Distribuciones Actualizadas",
   "telefono": "3109876543",
   "correo": "nuevo@correo.com"
 }
 
-Respuesta (200 - OK):
+- Respuesta (200 - OK):
 {
   "id": 1,
   "nombre": "Distribuciones Actualizadas",
@@ -523,23 +519,23 @@ Respuesta (200 - OK):
   "updatedAt": "2025-11-02T16:40:00Z"
 }
 
-Respuesta (404 - Not Found):
+- Respuesta (404 - Not Found):
 {
   "message": "Proveedor no encontrado"
 }
 
 **5. Eliminar un proveedor**
 
-Método: DELETE
-Endpoint: /proveedores/:id
-Descripción: Elimina un proveedor existente según su ID.
+- Método: DELETE
+- Endpoint: /proveedores/:id
+- Descripción: Elimina un proveedor existente según su ID.
 
-Respuesta (200 - OK):
+- Respuesta (200 - OK):
 {
   "message": "Proveedor eliminado correctamente"
 }
 
-Respuesta (404 - Not Found):
+- Respuesta (404 - Not Found):
 {
   "message": "Proveedor no encontrado"
 }
@@ -555,19 +551,20 @@ Respuesta (404 - Not Found):
   updatedAt?: Date;
 }
 
+---
 
 ### Módulo de Usuarios ###
 
 **1. Crear nuevo usuario**
 
-Método: POST
-Endpoint: /usuario/register
-Descripción: Registra un nuevo usuario en el sistema.
+- Método: POST
+- Endpoint: /usuario/register
+- Descripción: Registra un nuevo usuario en el sistema.
 
-Headers:
-Content-Type: application/json
+# Headers:
+- Content-Type: application/json
 
-Body (JSON):
+- Body (JSON):
 {
   "nombre": "terry",
   "correo": "terry@mail.com",
@@ -575,7 +572,7 @@ Body (JSON):
   "rol": "admin"
 }
 
-Respuesta exitosa (201 - Created):
+- Respuesta exitosa (201 - Created):
 {
   "id": 12,
   "nombre": "terry",
@@ -584,18 +581,18 @@ Respuesta exitosa (201 - Created):
   "createdAt": "2025-11-02T16:30:00Z"
 }
 
-Respuesta (400 - Bad Request):
+- Respuesta (400 - Bad Request):
 {
   "message": "El correo ya está registrado"
 }
 
 **2. Listar todos los usuarios**
 
-Método: GET
-Endpoint: /usuario/list
-Descripción: Devuelve la lista completa de usuarios registrados.
+- Método: GET
+- Endpoint: /usuario/list
+- Descripción: Devuelve la lista completa de usuarios registrados.
 
-Respuesta (200 - OK):
+- Respuesta (200 - OK):
 [
   {
     "id": 1,
@@ -613,14 +610,14 @@ Respuesta (200 - OK):
 
 **3. Buscar usuario por ID**
 
-Método: GET
-Endpoint: /usuario/:id
-Descripción: Busca un usuario específico por su identificador numérico.
+- Método: GET
+- Endpoint: /usuario/:id
+- Descripción: Busca un usuario específico por su identificador numérico.
 
-Parámetros:
+- Parámetros:
 Nombre: id	Tipo: number	Descripción: Identificador del usuario
 
-Respuesta (200 - OK):
+- Respuesta (200 - OK):
 {
   "id": 12,
   "nombre": "terry",
@@ -628,26 +625,26 @@ Respuesta (200 - OK):
   "rol": "admin"
 }
 
-Respuesta (404 - Not Found):
+- Respuesta (404 - Not Found):
 {
   "message": "Usuario 12 no encontrado"
 }
 
 **4. Actualizar un usuario**
 
-Método: PATCH
-Endpoint: /usuario/:id
-Descripción: Modifica los datos de un usuario existente.
+- Método: PATCH
+- Endpoint: /usuario/:id
+- Descripción: Modifica los datos de un usuario existente.
 
-Headers:
-Content-Type: application/json
+# Headers:
+- Content-Type: application/json
 
-Body (JSON):
+- Body (JSON):
 {
   "nombre": "terrymoto"
 }
 
-Respuesta (200 - OK):
+- Respuesta (200 - OK):
 {
   "id": 12,
   "nombre": "terrymoto",
@@ -656,30 +653,30 @@ Respuesta (200 - OK):
   "updatedAt": "2025-11-02T16:45:00Z"
 }
 
-Respuesta (404 - Not Found):
+- Respuesta (404 - Not Found):
 {
   "message": "Usuario 12 no encontrado"
 }
 
 **5. Eliminar un usuario**
 
-Método: DELETE
-Endpoint: /usuario/:id
-Descripción: Elimina un usuario existente según su ID.
+- Método: DELETE
+- Endpoint: /usuario/:id
+- Descripción: Elimina un usuario existente según su ID.
 
-Respuesta (200 - OK):
+- Respuesta (200 - OK):
 {
   "message": "Usuario 12 eliminado correctamente"
 }
 
-Respuesta (404 - Not Found):
+- Respuesta (404 - Not Found):
 {
   "message": "Usuario 12 no encontrado"
 }
 
 **Tipos de datos (DTOs)**
 
-CreateUsuarioDto
+- CreateUsuarioDto
 {
   nombre: string;
   correo: string;
@@ -687,7 +684,7 @@ CreateUsuarioDto
   rol: string;
 }
 
-UpdateUsuarioDto
+- UpdateUsuarioDto
 {
   nombre?: string;
   correo?: string;
@@ -695,25 +692,25 @@ UpdateUsuarioDto
   rol?: string;
 }
 
+---
 
 ### Módulo de venta_producto ###
 
 **1. Agregar producto a una venta**
 
-Método: POST
-Endpoint: http://localhost:3000/venta-producto
-
-Descripción:
+- Método: POST
+- Endpoint: http://localhost:3000/venta-producto
+- Descripción:
 Agrega un producto específico a una venta existente indicando la cantidad deseada.
 
-Body (JSON):
+- Body (JSON):
 {
   "idVenta": 1,
   "idProducto": 2,
   "cantidad": 3
 }
 
-Ejemplo de respuesta (200 OK):
+- Ejemplo de respuesta (200 OK):
 {
   "message": "Producto agregado a la venta correctamente",
   "ventaProducto": {
@@ -725,22 +722,22 @@ Ejemplo de respuesta (200 OK):
   }
 }
 
-Posibles errores:
+- Posibles errores:
 404 Not Found: Si la venta o el producto no existen.
 400 Bad Request: Si faltan campos obligatorios o la cantidad no es válida.
 
 **2. Listar productos de una venta**
 
-Método: GET
-Endpoint: http://localhost:3000/venta-producto/:idVenta
+- Método: GET
+- Endpoint: http://localhost:3000/venta-producto/:idVenta
 
-Ejemplo de uso:
+- Ejemplo de uso:
 GET http://localhost:3000/venta-producto/1
 
-Descripción:
+- Descripción:
 Obtiene todos los productos asociados a una venta específica.
 
-Ejemplo de respuesta (200 OK):
+- Ejemplo de respuesta (200 OK):
 [
   {
     "id": 10,
@@ -762,47 +759,47 @@ Ejemplo de respuesta (200 OK):
   }
 ]
 
-Posibles errores:
+- Posibles errores:
 404 Not Found: Si no hay productos asociados a esa venta.
 
 **3. Eliminar un producto de una venta**
 
-Método: DELETE
+- Método: DELETE
 Endpoint: http://localhost:3000/venta-producto/:id
 
-Ejemplo de uso:
+- Ejemplo de uso:
 DELETE http://localhost:3000/venta-producto/5
 
-Descripción:
+- Descripción:
 Elimina un producto específico de una venta.
 
-Ejemplo de respuesta (200 OK):
+- Ejemplo de respuesta (200 OK):
 {
   "message": "Producto eliminado de la venta correctamente",
   "deletedId": 5
 }
 
-Posibles errores:
+- Posibles errores:
 404 Not Found: Si el registro no existe.
 
+---
 
 ### Módulo de ventas ###
 
 **1. Crear una venta**
 
-Método: POST
-Endpoint: http://localhost:3000/ventas/crear
-
-Descripción:
+- Método: POST
+- Endpoint: http://localhost:3000/ventas/crear
+- Descripción:
 Crea una nueva venta asociada a un usuario, registrando el total de la transacción.
 
-Body (JSON):
+- Body (JSON):
 {
   "total": 10000,
   "id_usuario": 16
 }
 
-Ejemplo de respuesta (201 Created):
+- Ejemplo de respuesta (201 Created):
 {
   "message": "Venta creada exitosamente",
   "venta": {
@@ -814,19 +811,18 @@ Ejemplo de respuesta (201 Created):
   }
 }
 
-Posibles errores:
+- Posibles errores:
 400 Bad Request: Si faltan campos requeridos (total, id_usuario).
 404 Not Found: Si el usuario no existe.
 
 **2. Listar todas las ventas**
 
-Método: GET
-Endpoint: http://localhost:3000/ventas/listar
-
-Descripción:
+- Método: GET
+- Endpoint: http://localhost:3000/ventas/listar
+- Descripción:
 Devuelve un listado completo de todas las ventas registradas.
 
-Ejemplo de respuesta (200 OK):
+- Ejemplo de respuesta (200 OK):
 [
   {
     "id": 1,
@@ -844,21 +840,21 @@ Ejemplo de respuesta (200 OK):
   }
 ]
 
-Posibles errores:
+- Posibles errores:
 404 Not Found: Si no existen ventas registradas.
 
 **3. Obtener una venta por ID**
 
-Método: GET
-Endpoint: http://localhost:3000/ventas/:id
+- Método: GET
+- Endpoint: http://localhost:3000/ventas/:id
 
-Ejemplo de uso:
+- Ejemplo de uso:
 GET http://localhost:3000/ventas/4
 
-Descripción:
+- Descripción:
 Obtiene los datos detallados de una venta específica por su identificador.
 
-Ejemplo de respuesta (200 OK):
+- Ejemplo de respuesta (200 OK):
 {
   "id": 4,
   "total": 50000,
@@ -867,26 +863,26 @@ Ejemplo de respuesta (200 OK):
   "estado": "ACTIVA"
 }
 
-Posibles errores:
+- Posibles errores:
 404 Not Found: Si la venta no existe.
 
 **4. Actualizar una venta**
 
-Método: PATCH
-Endpoint: http://localhost:3000/ventas/:id
+- Método: PATCH
+- Endpoint: http://localhost:3000/ventas/:id
 
-Ejemplo de uso:
+- Ejemplo de uso:
 PATCH http://localhost:3000/ventas/4
 
-Body (JSON):
+- Body (JSON):
 {
   "total": 50000
 }
 
-Descripción:
+- Descripción:
 Permite modificar los datos de una venta existente, como su total u otros campos definidos en el DTO.
 
-Ejemplo de respuesta (200 OK):
+- Ejemplo de respuesta (200 OK):
 {
   "message": "Venta actualizada correctamente",
   "ventaActualizada": {
@@ -898,26 +894,26 @@ Ejemplo de respuesta (200 OK):
   }
 }
 
-Posibles errores:
+- Posibles errores:
 400 Bad Request: Si los datos enviados no son válidos.
 404 Not Found: Si la venta no existe.
 
 **5. Eliminar una venta**
 
-Método: DELETE
-Endpoint: http://localhost:3000/ventas/:id
+- Método: DELETE
+- Endpoint: http://localhost:3000/ventas/:id
 
-Ejemplo de uso:
+- Ejemplo de uso:
 DELETE http://localhost:3000/ventas/4
 
-Descripción:
+- Descripción:
 Elimina (o marca como anulada, según la implementación del servicio) una venta existente por su identificador.
 
-Ejemplo de respuesta (200 OK):
+- Ejemplo de respuesta (200 OK):
 {
   "message": "Venta eliminada correctamente",
   "deletedId": 4
 }
 
-Posibles errores:
+- Posibles errores:
 404 Not Found: Si la venta no existe.
