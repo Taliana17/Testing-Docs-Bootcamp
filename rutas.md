@@ -1,21 +1,21 @@
 ## Documentación de Rutas — Módulo de Categorías ##
-
+---
 **1. Crear nueva categoría**
 
-Método: POST
-Endpoint: /categorias
-Descripción: Crea una nueva categoría en el sistema.
+- Método: POST
+- Endpoint: /categorias
+- Descripción: Crea una nueva categoría en el sistema.
 
-Headers:
-Content-Type: application/json
+# Headers: #
+- Content-Type: application/json
 
-Body (JSON):
+- Body (JSON):
 {
   "nombre": "Materiales de construcción",
   "descripcion": "Cemento, arena, yeso y otros materiales básicos"
 }
 
-Respuesta exitosa (201 - Created):
+- Respuesta exitosa (201 - Created):
 {
   "id": 1,
   "nombre": "Materiales de construcción",
@@ -25,11 +25,11 @@ Respuesta exitosa (201 - Created):
 
 **2. Listar todas las categorías**
 
-Método: GET
-Endpoint: /categorias
-Descripción: Devuelve la lista completa de categorías registradas.
+- Método: GET
+- Endpoint: /categorias
+- Descripción: Devuelve la lista completa de categorías registradas.
 
-Respuesta (200 - OK):
+- Respuesta (200 - OK):
 [
   {
     "id": 1,
@@ -45,43 +45,41 @@ Respuesta (200 - OK):
 
 **3. Buscar categoría por ID**
 
-Método: GET
-Endpoint: /categorias/:id
-Descripción: Busca una categoría específica por su identificador numérico.
+- Método: GET
+- Endpoint: /categorias/:id
+- Descripción: Busca una categoría específica por su identificador numérico.
 
-Parámetros:
+- Parámetros:
 Nombre: id	Tipo: number	Descripción: Identificador de la categoría
 
-Respuesta (200 - OK):
+- Respuesta (200 - OK):
 {
   "id": 1,
   "nombre": "Materiales de construcción",
   "descripcion": "Cemento, arena, yeso y otros materiales básicos"
 }
 
-
-Respuesta (404 - Not Found):
+- Respuesta (404 - Not Found):
 {
   "message": "Categoría no encontrada"
 }
 
 **4. Actualizar una categoría**
 
-Método: PATCH
-Endpoint: /categorias/:id
-Descripción: Modifica los datos de una categoría existente.
+- Método: PATCH
+- Endpoint: /categorias/:id
+- Descripción: Modifica los datos de una categoría existente.
 
-Headers:
-Content-Type: application/json
+# Headers: #
+- Content-Type: application/json
 
-Body (JSON):
+- Body (JSON):
 {
   "nombre": "Cementos tradicionales",
   "descripcion": "Cemento gris y blanco para usos generales"
 }
 
-
-Respuesta (200 - OK):
+- Respuesta (200 - OK):
 {
   "id": 1,
   "nombre": "Cementos tradicionales",
@@ -91,33 +89,34 @@ Respuesta (200 - OK):
 
 **5. Eliminar una categoría**
 
-Método: DELETE
-Endpoint: /categorias/:id
-Descripción: Elimina una categoría existente según su ID.
+- Método: DELETE
+- Endpoint: /categorias/:id
+- Descripción: Elimina una categoría existente según su ID.
 
-Respuesta (200 - OK):
+- Respuesta (200 - OK):
 {
   "message": "Categoría eliminada correctamente"
 }
 
-Respuesta (404 - Not Found):
+- Respuesta (404 - Not Found):
 {
   "message": "Categoría no encontrada"
 }
 
 **Tipos de datos (DTOs)**
-CreateCategoriaDto
+- CreateCategoriaDto
 {
   nombre: string;
   descripcion: string;
 }
 
-UpdateCategoriaDto
+- UpdateCategoriaDto
 {
   nombre?: string;
   descripcion?: string;
 }
 
+---
 
 ### Módulo de Facturación ###
 

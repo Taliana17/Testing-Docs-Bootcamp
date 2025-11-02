@@ -105,8 +105,8 @@ Crear un Pull Request hacia develop o main.
 
 ##  Roles
 
-Monica Ismelia Caña Reyes – Documentación CompoDoc
+- Monica Ismelia Caña Reyes – Documentación CompoDoc
 
-Carolina Isabel Tovio Albernia – Documentación de rutas y readme
+- Carolina Isabel Tovio Albernia – Documentación de rutas y readme
 
-Taliana Moreno Guzmán – Testing 
+- Taliana Moreno Guzmán – Testing 
