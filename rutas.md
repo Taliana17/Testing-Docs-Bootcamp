@@ -1,4 +1,4 @@
-## Documentación de Rutas — Módulo de Categorías ##
+# Documentación de Rutas — Módulo de Categorías #
 ---
 **1. Crear nueva categoría**
 
@@ -6,7 +6,7 @@
 - Endpoint: /categorias
 - Descripción: Crea una nueva categoría en el sistema.
 
-# Headers: #
+## Headers: ##
 - Content-Type: application/json
 
 - Body (JSON):
