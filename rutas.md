@@ -70,7 +70,7 @@ Nombre: id	Tipo: number	Descripción: Identificador de la categoría
 - Endpoint: /categorias/:id
 - Descripción: Modifica los datos de una categoría existente.
 
-# Headers: #
+## Headers: ##
 - Content-Type: application/json
 
 - Body (JSON):
@@ -118,7 +118,7 @@ Nombre: id	Tipo: number	Descripción: Identificador de la categoría
 
 ---
 
-### Módulo de Facturación ###
+# Módulo de Facturación #
 
 **1. Crear una nueva factura**
 
@@ -126,7 +126,7 @@ Nombre: id	Tipo: number	Descripción: Identificador de la categoría
 - Endpoint: /facturacion
 - Descripción: Crea una nueva factura en el sistema.
 
-# Headers:
+## Headers: ##
 - Content-Type: application/json
 
 - Body (JSON):
@@ -205,7 +205,7 @@ Nombre: id	Tipo: number	Descripción: Identificador de la factura
 - Endpoint: /facturacion/:id
 - Descripción: Actualiza los datos de una factura existente.
 
-# Headers:
+## Headers: ##
 - Content-Type: application/json
 
 - Body (JSON):
@@ -261,7 +261,7 @@ Nombre: id	Tipo: number	Descripción: Identificador de la factura
 
 ---
 
-### Módulo de Productos ###
+# Módulo de Productos #
 
 **1. Crear nuevo producto**
 
@@ -269,7 +269,7 @@ Nombre: id	Tipo: number	Descripción: Identificador de la factura
 - Endpoint: /productos
 - Descripción: Crea un nuevo producto en el sistema.
 
-# Headers:
+## Headers: ##
 - Content-Type: application/json
 
 - Body (JSON):
@@ -353,7 +353,7 @@ Nombre: id	Tipo: number	Descripción: Identificador del producto
 - Endpoint: /productos/:id
 - Descripción: Modifica los datos de un producto existente.
 
-# Headers:
+## Headers: ##
 - Content-Type: application/json
 
 - Body (JSON):
@@ -423,7 +423,7 @@ Nombre: id	Tipo: number	Descripción: Identificador del producto
 
 ---
 
-### Módulo de Proveedores ###
+# Módulo de Proveedores #
 
 **1. Crear nuevo proveedor**
 
@@ -431,7 +431,7 @@ Nombre: id	Tipo: number	Descripción: Identificador del producto
 - Endpoint: /proveedores
 - Descripción: Crea un nuevo proveedor en el sistema.
 
-# Headers:
+## Headers: ##
 - Content-Type: application/json
 
 - Body (JSON):
@@ -500,7 +500,7 @@ Nombre: id	Tipo: number	Descripción: Identificador del proveedor
 - Endpoint: /proveedores/:id
 - Descripción: Modifica los datos de un proveedor existente.
 
-# Headers:
+## Headers: ##
 - Content-Type: application/json
 
 - Body (JSON):
@@ -553,7 +553,7 @@ Nombre: id	Tipo: number	Descripción: Identificador del proveedor
 
 ---
 
-### Módulo de Usuarios ###
+# Módulo de Usuarios #
 
 **1. Crear nuevo usuario**
 
@@ -561,7 +561,7 @@ Nombre: id	Tipo: number	Descripción: Identificador del proveedor
 - Endpoint: /usuario/register
 - Descripción: Registra un nuevo usuario en el sistema.
 
-# Headers:
+## Headers: ##
 - Content-Type: application/json
 
 - Body (JSON):
@@ -636,7 +636,7 @@ Nombre: id	Tipo: number	Descripción: Identificador del usuario
 - Endpoint: /usuario/:id
 - Descripción: Modifica los datos de un usuario existente.
 
-# Headers:
+## Headers: ##
 - Content-Type: application/json
 
 - Body (JSON):
@@ -694,7 +694,7 @@ Nombre: id	Tipo: number	Descripción: Identificador del usuario
 
 ---
 
-### Módulo de venta_producto ###
+# Módulo de venta_producto #
 
 **1. Agregar producto a una venta**
 
@@ -784,7 +784,7 @@ Elimina un producto específico de una venta.
 
 ---
 
-### Módulo de ventas ###
+# Módulo de ventas #
 
 **1. Crear una venta**
 
