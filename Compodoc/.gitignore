@@ -1,0 +1,14 @@
+# Ignorar dependencias
+node_modules/
+
+# Archivos de build
+dist/
+out/
+build/
+
+# Configuración del sistema
+.env
+.DS_Store
+
+# Logs
+*.log
