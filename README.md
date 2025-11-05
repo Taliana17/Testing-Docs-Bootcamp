@@ -89,6 +89,15 @@ Documentación del código (Compodoc)
 
 ---
 
+## Documentación técnica (Compodoc)
+
+Para generar la documentación técnica completa del proyecto (controladores, servicios, módulos, entidades y dependencias):
+
+npx compodoc -p tsconfig.json -s
+Luego, abre en el navegador la URL: http://127.0.0.1:8080
+
+---
+
 ##  Contribución al proyecto
 
 Para aportar al proyecto:
