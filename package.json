@@ -1,7 +1,7 @@
 {
   "name": "taller_4",
   "version": "1.0.0",
-  "description": "API desarrollada con NestJS, TypeORM y PostgreSQL — incluye entorno de pruebas con Jest.",
+  "description": "API desarrollada con NestJS, TypeORM y PostgreSQL — incluye entorno de pruebas con Jest y documentación generada automáticamente con Compodoc.",
   "author": "",
   "private": true,
   "license": "MIT",
@@ -17,7 +17,10 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "docs": "npx @compodoc/compodoc -p compodoc.tsconfig.json -d compodoc/documentacion",
+    "docs:serve": "npx @compodoc/compodoc -p compodoc.tsconfig.json -d compodoc/documentacion -s",
+    "docs:watch": "npx @compodoc/compodoc -p compodoc.tsconfig.json -d compodoc/documentacion -s -w"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
@@ -43,6 +46,7 @@
     "@nestjs/cli": "^11.0.0",
     "@nestjs/schematics": "^11.0.0",
     "@nestjs/testing": "^11.1.8",
+    "@compodoc/compodoc": "^1.1.32",
     "@types/bcrypt": "^6.0.0",
     "@types/express": "^5.0.0",
     "@types/jest": "^30.0.0",
