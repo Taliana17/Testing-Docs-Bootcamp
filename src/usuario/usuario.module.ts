@@ -12,6 +12,11 @@ import { UsuarioRepository } from './providers/usuario.repository';
 import { VentasRepository } from './providers/ventas.repository';
 import { FacturacionRepository } from './providers/facturacion.repository'; 
 
+/**
+ * Module that groups all components related to user management.
+ * Registers user entities, controller, service, and custom repositories.
+ * Exports providers to allow reuse in authentication and other modules.
+ */
 @Module({
   imports: [TypeOrmModule.forFeature([Usuario, Ventas, Facturacion])], 
   controllers: [UsuarioController],

@@ -5,6 +5,10 @@ import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { JwtStrategy } from './jwt.strategy';
 import { UsuarioModule } from 'src/usuario/usuario.module';
+/**
+ * Module responsible for authetication features.
+ * Configures JWT. passport, and  exports the AuthService for use in  other modules.
+ */
 
 @Module({
   imports: [

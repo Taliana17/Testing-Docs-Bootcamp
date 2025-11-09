@@ -3,22 +3,47 @@ import { UsuarioService } from './usuario.service';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 
+/**
+ * Controller for managing user accounts.
+ * Handles registration, listing, retrieval, update, and deletion of users.
+ */
 @Controller('usuario') //definimos la ruta base para este controlador
 export class UsuarioController {
+
+  /**
+   * Initializes the controller with the UsuarioService dependency.
+   * @param userService - Service that handles user business logic.
+   */
   constructor(private readonly userService: UsuarioService) {}
 
+  /**
+   * Registers a new user.
+   * @param body - Data Transfer Object containing user registration details.
+   * @returns The created user object (without password).
+   */
   // Crear usuario
   @Post('register')
   createUser(@Body() body: CreateUsuarioDto) {
     return this.userService.createUser(body);
   }
 
+   /**
+   * Retrieves a list of all users.
+   * @returns An array of user objects (passwords are excluded for security).
+   */
   // Listar usuarios
   @Get('list')
   listUsers() {
     return this.userService.listUsers();
   }
 
+  /**
+   * Retrieves a single user by ID.
+   * @param id - Unique identifier of the user.
+   * @returns The user object if found.
+   * @throws NotFoundException if the user does not exist.
+   */
+  
   // Obtener usuario por ID
   @Get(':id')
   async getUser(@Param('id', ParseIntPipe) id: number) {
@@ -28,6 +53,13 @@ export class UsuarioController {
     return user;
   }
 
+  /**
+   * Updates an existing user partially by ID.
+   * @param id - ID of the user to update.
+   * @param body - Partial user data (all fields optional).
+   * @returns The updated user object.
+   * @throws NotFoundException if the user does not exist.
+   */
   // Actualizar usuario
   @Patch(':id')
   async updateUser(
@@ -40,6 +72,12 @@ export class UsuarioController {
     return updated;
   }
 
+  /**
+   * Deletes a user by ID.
+   * @param id - ID of the user to delete.
+   * @returns A success message confirming deletion.
+   * @throws NotFoundException if the user does not exist.
+   */
   // Eliminar usuario
   @Delete(':id')
   async deleteUser(@Param('id', ParseIntPipe) id: number) {

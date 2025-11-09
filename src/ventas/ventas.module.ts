@@ -24,8 +24,9 @@ import { Facturacion } from 'src/facturacion/facturacion.entity';
 import { FacturacionModule } from 'src/facturacion/facturacion.module';
 
 /**
- * Módulo de Ventas
- * Agrupa todo lo relacionado con el manejo de ventas (entidad, controlador, servicio y repositorio).
+ * Module that groups all components related to sales management.
+ * Integrates with FacturacionModule to enable automatic invoice generation.
+ * Registers sale entity, controller, service, and custom repository.
  */
 @Module({
   // Importa las entidades necesarias y el módulo de facturación.

@@ -23,8 +23,8 @@ import { FacturacionController } from './facturacion.controller';
 import { FacturacionRepository } from '../usuario/providers/facturacion.repository';
 
 /**
- * Módulo de Facturación
- * Un módulo agrupa componentes relacionados (controlador, servicio y entidad) en una sola unidad.
+ * Module that groups all components related to invoice management.
+ * Registers entities (Facturacion, Ventas, Usuario), service, controller, and repository for invoice operations.
  */
 @Module({
   // Registra las entidades necesarias para que TypeORM pueda trabajar con ellas (consultas, guardado, relaciones, etc.)

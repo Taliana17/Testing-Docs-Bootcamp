@@ -15,6 +15,10 @@ import { CategoriaController } from './categoria.controller';
 
 // // Define el módulo de Categoría.
 // // Un módulo agrupa componentes relacionados (controlador, servicio y entidad) en una sola unidad.
+/**
+ * Module that groups all comppnentes related to  product categories.
+ * Registers the  Categoria entity, service, and controller for use in the application.
+ */
 @Module({
 //   // Registra la entidad Categoria para que TypeORM pueda trabajar con ella (consultas, guardado, etc.)
 imports: [TypeOrmModule.forFeature([Categoria])],
@@ -32,4 +36,3 @@ exports: [CategoriaService],
 // //Clase principal del módulo de Categoría.
 // // Este módulo reúne todo lo relacionado con las categorías (entidad, servicio y controlador).
 export class CategoriaModule {}
-

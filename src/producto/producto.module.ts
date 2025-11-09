@@ -7,6 +7,10 @@ import { Proveedor } from '../proveedor/proveedor.entity';
 import { Categoria } from '../categoria/categoria.entity';
 import { ProveedorModule } from '../proveedor/proveedor.module';
 import { CategoriaModule } from '../categoria/categoria.module';
+/**
+ * Module that groups all components related to product management.
+ * Registers the producto entity, contoller, and service, and imports Proveedor and Categoria module for relationships.
+ */
 
 @Module({
   imports: [

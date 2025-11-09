@@ -1,0 +1,325 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>taller_4 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="./" class="navbar-brand">taller_4 documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content readme">
+                   <div class="content-data">
+
+
+<h1>Proyecto Taller 4 - Backend con NestJS</h1>
+<p>Este proyecto forma parte del <strong>Taller 3</strong>, desarrollado con <strong>NestJS</strong> bajo una arquitectura modular y orientada a controladores, servicios y guards.<br>El objetivo principal es implementar endpoints funcionales, pruebas (testing) y documentación técnica automatizada.</p>
+<hr>
+<h2>Stack del proyecto</h2>
+<ul>
+<li><strong>Framework:</strong> NestJS (Node.js + TypeScript)</li>
+<li><strong>Base de datos:</strong> MySQL / PostgreSQL (según configuración del <code>.env</code>)</li>
+<li><strong>ORM:</strong> TypeORM</li>
+<li><strong>Lenguaje:</strong> TypeScript</li>
+<li><strong>Testing:</strong> Jest</li>
+<li><strong>Documentación:</strong> Compodoc</li>
+<li><strong>Gestor de dependencias:</strong> npm o yarn</li>
+</ul>
+<hr>
+<h2>Instalación del proyecto</h2>
+<ol>
+<li><p>Clonar el repositorio:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">git clone https://github.com/carolinatovio1-cloud/CAROLINA-ISABEL-TOVIO.git
+cd taller3</code></pre></div></li>
+<li><p>Instalar las dependencias:
+npm install</p>
+</li>
+<li><p>Crear el archivo de entorno en la raíz del proyecto con las variables necesarias:
+   type: &#39;postgres&#39;,
+   autoLoadEntities: true,
+   synchronize: true,
+   port: 5432,
+   username: &#39;postgres&#39;,
+   password: &#39;****&#39;,
+   host: &#39;localhost&#39;,
+   database: &#39;social-media&#39;,</p>
+</li>
+</ol>
+<hr>
+<h2>Ejecución del proyecto</h2>
+<ul>
+<li><p><strong>Modo desarrollo:</strong>
+npm run start:dev</p>
+</li>
+<li><p><strong>Modo producción:</strong>
+npm run start:prod</p>
+</li>
+<li><p><strong>Verificar el servidor activo en:</strong>
+<a href="http://localhost:3000">http://localhost:3000</a></p>
+</li>
+</ul>
+<hr>
+<h2>Uso del proyecto</h2>
+<p>El proyecto contiene módulos organizados por entidades.
+Cada módulo incluye:</p>
+<ul>
+<li><strong>Controller</strong> → Define las rutas (endpoints)</li>
+<li><strong>Service</strong> → Contiene la lógica del negocio</li>
+<li><strong>Entity</strong> → Mapea las tablas de la base de datos</li>
+<li><strong>DTOs</strong> → Validan y tipan los datos de entrada</li>
+<li><strong>Guards</strong> → Protegen las rutas mediante autenticación/autorización</li>
+</ul>
+<p>Ejemplo de endpoints básicos (según entidad):
+GET    /api/entidad        # Listar todos
+GET    /api/entidad/:id    # Obtener uno
+POST   /api/entidad        # Crear nuevo
+PUT    /api/entidad/:id    # Actualizar
+DELETE /api/entidad/:id    # Eliminar</p>
+<hr>
+<h2>Documentación de rutas (Swagger)</h2>
+<p>La documentación de las rutas se generó automáticamente con Swagger, usando los decoradores de NestJS como @ApiTags, @ApiOperation, @ApiResponse y @ApiBody.</p>
+<p>Cómo visualizar la documentación Swagger</p>
+<ul>
+<li><strong>Inicia el servidor con:</strong> npm run start:dev</li>
+<li><strong>Abre en tu navegador:</strong> <a href="http://localhost:3000/api/docs">http://localhost:3000/api/docs</a></li>
+</ul>
+<p>Allí encontrarás todos los endpoints documentados con su descripción, parámetros y ejemplos de request/response.</p>
+<p>Ejemplo de endpoint documentado:
+@ApiTags(&#39;usuario&#39;)
+@Controller(&#39;usuario&#39;)
+export class UsuarioController {
+  @Post(&#39;register&#39;)
+  @ApiOperation({ summary: &#39;Registrar un nuevo usuario&#39; })
+  @ApiResponse({ status: 201, description: &#39;Usuario creado exitosamente.&#39; })
+  @ApiResponse({ status: 400, description: &#39;Datos inválidos.&#39; })
+  createUser(@Body() dto: CreateUsuarioDto) {
+    return this.usuarioService.createUser(dto);
+  }
+}</p>
+<ul>
+<li><strong>Resultado esperado:</strong>
+Cuando el servidor esté corriendo, Swagger mostrará automáticamente todos los endpoints del módulo usuario (registro, login, listar, actualizar, eliminar) con sus ejemplos y descripciones.</li>
+</ul>
+<hr>
+<h2>Testing</h2>
+<ul>
+<li><p>Para ejecutar las pruebas unitarias:
+npm run test</p>
+</li>
+<li><p>Para generar el coverage (cobertura de código):
+npm run test:cov</p>
+</li>
+</ul>
+<p>Las pruebas incluyen:
+Controllers
+Services / Providers
+Guards
+Documentación del código (Compodoc)</p>
+<hr>
+<h2>Documentación técnica (Compodoc)</h2>
+<p>Para generar la documentación técnica completa del proyecto (controladores, servicios, módulos, entidades y dependencias):</p>
+<p>npx compodoc -p tsconfig.json -s
+Luego, abre en el navegador la URL: <a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a></p>
+<hr>
+<h2>Contribución al proyecto</h2>
+<p>Para aportar al proyecto:</p>
+<ul>
+<li><p><strong>Crear una rama para tu trabajo:</strong>
+git checkout -b </p>
+</li>
+<li><p>Realizar tus cambios y commits.</p>
+</li>
+<li><p><strong>Hacer push de la rama:</strong>
+git push origin</p>
+</li>
+</ul>
+<p>Crear un Pull Request hacia develop o main.</p>
+<h2>Roles</h2>
+<ul>
+<li><p>Monica Ismelia Caña Reyes – Documentación técnica (CompoDoc)</p>
+</li>
+<li><p>Carolina Isabel Tovio Albernia – Documentación de rutas(Swagger) y Readme</p>
+</li>
+<li><p>Taliana Moreno Guzmán – Testing</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'readme';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

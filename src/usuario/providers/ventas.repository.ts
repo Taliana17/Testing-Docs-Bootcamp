@@ -7,8 +7,19 @@ import { Facturacion } from 'src/facturacion/facturacion.entity';
 import { CreateVentaDto } from 'src/ventas/dto/create-venta.dto';
 import { UpdateVentaDto } from 'src/ventas/dto/update-venta.dto';
 
+/**
+ * Custom repository for sale-related database operations.
+ * Automatically creates an associated invoice when a sale is created.
+ */
 @Injectable()
 export class VentasRepository {
+  
+  /**
+   * Initializes the repository with dependencies for Ventas, Usuario, and Facturacion entities.
+   * @param ventasRepo - Repository for sale operations.
+   * @param usuarioRepo - Repository to fetch user data for sale association.
+   * @param facturacionRepo - Repository to automatically generate invoices after sales.
+   */
   constructor(
     //inyección de dependencias
     // 1. ventasRepo: Repositorio principal para la entidad Ventas
@@ -23,6 +34,13 @@ export class VentasRepository {
     @InjectRepository(Facturacion)
     private facturacionRepo: Repository<Facturacion>,
   ) {}
+
+  /**
+   * Creates a new sale and automatically generates an associated invoice.
+   * @param data - Data Transfer Object containing sale details, including user ID and total.
+   * @returns The created sale with its associated user, invoice, and products.
+   * @throws NotFoundException if the user does not exist.
+   */
 // Crea una nueva Venta y automáticamente crea la Factura asociada en la misma
   async createVenta(data: CreateVentaDto) {
     // Buscar usuario
@@ -57,6 +75,12 @@ export class VentasRepository {
       relations: ['usuario', 'facturacion', 'ventaProductos'],
     });
   }
+
+  /**
+   * Retrieves all sales with associated user, invoice, and product details.
+   * @returns An array of all sales including related entities.
+   */
+
 // Listar todas las ventas
   async findAll() {
     return await this.ventasRepo.find({
@@ -64,6 +88,12 @@ export class VentasRepository {
       relations: ['usuario', 'facturacion', 'ventaProductos'],
     });
   }
+
+   /**
+   * Finds a single sale by its ID.
+   * @param id - Unique identifier of the sale.
+   * @returns The sale object with user, invoice, and product details.
+   */
 // Obtener una venta por ID
   async findOne(id: number) {
     return await this.ventasRepo.findOne({
@@ -71,11 +101,25 @@ export class VentasRepository {
       relations: ['usuario', 'facturacion', 'ventaProductos'],
     });
   }
+
+  /**
+   * Updates an existing sale by ID.
+   * @param id - ID of the sale to update.
+   * @param data - Partial sale data to update.
+   * @returns The updated sale object with related entities.
+   */
+
 // Actualizar una venta
   async updateVenta(id: number, data: UpdateVentaDto) {
     await this.ventasRepo.update(id, data);
     return this.findOne(id);
   }
+  
+/**
+   * Deletes a sale by its ID.
+   * @param id - ID of the sale to delete.
+   * @returns Result of the delete operation.
+   */
 // Eliminar una venta
   async deleteVenta(id: number) {
     return await this.ventasRepo.delete(id);
