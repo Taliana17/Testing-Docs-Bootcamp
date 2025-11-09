@@ -105,7 +105,7 @@ Cuando el servidor esté corriendo, Swagger mostrará automáticamente todos los
 ##  Testing
 
 - Para ejecutar las pruebas unitarias:
-npm run test
+npm test
 
 - Para generar el coverage (cobertura de código):
 npm run test:cov
